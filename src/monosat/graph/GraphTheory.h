@@ -61,6 +61,8 @@
 #include <gmpxx.h>
 #include <cstdio>
 #include <cstdlib>
+#include <sys/time.h>
+#include <sys/types.h>
 #include <unistd.h>
 #include <sstream>
 #include <string>
