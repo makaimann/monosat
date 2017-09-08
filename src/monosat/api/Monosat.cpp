@@ -110,7 +110,7 @@ static void SIGNAL_HANDLER_api(int signum) {
 void enableResourceLimits(){
 	struct rusage ru;
 	getrusage(RUSAGE_SELF, &ru);
-	__time_t cur_time = ru.ru_utime.tv_sec;
+	time_t cur_time = ru.ru_utime.tv_sec;
 
 	rlimit rl;
 	getrlimit(RLIMIT_CPU, &rl);
