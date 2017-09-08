@@ -30,6 +30,11 @@
 #include <string>
 #include <cstdint>
 #include <limits>
+
+#ifdef __APPLE__
+using sighandler_t = sig_t;
+#endif
+
 namespace Monosat{
 
 namespace Optimization{
