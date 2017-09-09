@@ -316,7 +316,11 @@ target_link_libraries(monosat gmp)
 if (${UNIX})
     #librt is needed for clock_gettime, which is enabled for linux only
     #(clock_gettime is used for capturing detailed timing statistics only)
-    target_link_libraries(monosat rt)
+    if (NOT ${APPLE})
+        target_link_libraries(monosat rt)
+    else()
+        target_link_libraries(monosat)
+    endif()
 endif (${UNIX})
 
 add_executable(monosat_static ${SOURCE_FILES})
@@ -330,7 +334,11 @@ target_link_libraries(monosat_static gmp.a)
 if (${UNIX})
     #librt is needed for clock_gettime, which is enabled for linux only
     #(clock_gettime is used for capturing detailed timing statistics only)
-    target_link_libraries(monosat_static rt) #not static
+    if (NOT ${APPLE})
+        target_link_libraries(monosat_static rt)
+    else()
+        target_link_libraries(monosat_static)
+    endif()
 endif (${UNIX})
 
 add_library(libmonosat SHARED ${SOURCE_FILES})
@@ -342,7 +350,11 @@ target_link_libraries(libmonosat gmp)
 if (${UNIX})
     #librt is needed for clock_gettime, which is enabled for linux only
     #(clock_gettime is used for capturing detailed timing statistics only)
-    target_link_libraries(libmonosat rt)
+    if (NOT ${APPLE})
+        target_link_libraries(libmonosat rt)
+    else()
+        target_link_libraries(libmonosat)
+    endif()
 endif (${UNIX})
 
 
@@ -355,7 +367,11 @@ target_link_libraries(libmonosat_static gmp.a)
 if (${UNIX})
     #librt is needed for clock_gettime, which is enabled for linux only
     #(clock_gettime is used for capturing detailed timing statistics only)
-    target_link_libraries(libmonosat_static rt)
+    if (NOT ${APPLE})
+        target_link_libraries(libmonosat_static rt)
+    else()
+        target_link_libraries(libmonosat_static)
+    endif()
 endif (${UNIX})
 
 install(TARGETS monosat_static libmonosat libmonosat_static
