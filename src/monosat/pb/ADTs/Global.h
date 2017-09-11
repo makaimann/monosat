@@ -34,6 +34,9 @@ Contains types, macros, and inline functions generally useful in a C++ program.
 #include <cfloat>
 #include <new>
 
+#include <sys/time.h>
+#include <sys/resource.h>
+
 #include "monosat/mtl/Vec.h"
 namespace Monosat {
 namespace PB {
@@ -199,10 +202,6 @@ macro int irand(double &seed, int size) {
 macro double cpuTime(void) {
     return (double)clock() / CLOCKS_PER_SEC; }
 #else
-
-#include <sys/time.h>
-
-#include <sys/resource.h>
 
 macro double cpuTime(void) {
     struct rusage ru;
