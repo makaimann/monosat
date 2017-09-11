@@ -131,7 +131,7 @@ void optimizeBase(vec<Int> &seq, int carry_ins, vec<Int> &rhs, int cost, vec<int
         new_rhs.clear();
     }
 }
-
+}
 
 static
 void optimizeBase(vec<Int> &seq, vec<Int> &rhs, int &cost_bestfound, vec<int> &base_bestfound) {
