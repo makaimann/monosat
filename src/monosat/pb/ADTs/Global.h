@@ -80,7 +80,7 @@ template<class T>
 macro T max(T x, T y) { return (x > y) ? x : y; }
 
 template<bool>
-struct STATIC_ASSERTION_FAILURE;
+struct STATIC_ASSERTION_FAILURE {};
 template<>
 struct STATIC_ASSERTION_FAILURE<true> {
 };
