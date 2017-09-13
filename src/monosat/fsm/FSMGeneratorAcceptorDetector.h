@@ -35,6 +35,8 @@
 #include "monosat/fsm/alg/NFALinearGeneratorAcceptor.h"
 #include "monosat/graph/GraphTheory.h"
 
+#include <stdint.h>
+
 using namespace dgl;
 namespace Monosat {
 
@@ -149,7 +151,7 @@ public:
 	vec<Var> lit_backward_map;
 	vec<bool> seen_chars;
 
-	GraphTheorySolver<long> * graph=nullptr;//for if we reduce the nfa to a graph
+	GraphTheorySolver<int64_t> * graph=nullptr;//for if we reduce the nfa to a graph
 	vec<vec<int> > nodes;
 
 	void printStats() {

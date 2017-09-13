@@ -33,6 +33,7 @@
 #include "monosat/pb/PbTheory.h"
 #include "monosat/core/Dimacs.h"
 #include <gmpxx.h>
+#include <stdint.h>
 #include <set>
 #include <string>
 #include <sstream>
@@ -724,7 +725,7 @@ private:
 			int graphID = parseInt(in);
 			int s = parseInt(in);
 			int t = parseInt(in);
-			int64_t flow = parseInt(in); //old maxflow constraints always compared to an int
+			long flow = parseInt(in); //old maxflow constraints always compared to an int
 			int reachVar = parseInt(in) - 1; //note: maximum flow constraint format has been changed since the paper. The order of reachVar and flow after the paper, to allow for non-integer flow constraints.
 			bool inclusive=true;//old maxflow constraints were always inclusive.
 
